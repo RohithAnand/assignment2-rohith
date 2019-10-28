@@ -1,0 +1,26 @@
+<form class="form-inline ml-auto">
+    <div class="md-form my-0">
+      <input class="form-control" name="city" [(ngModel)]="city" type="text" placeholder="Search" aria-label="Search"> 
+    </div>
+    <button  type="button" class="btn btn-success" (click)="findRestaurants()"> Search </button>
+    <br/>
+    <br/>
+</form>
+<!-- <div *ngFor="let restaurant of restaurants">
+{{restaurant.name}};
+{{restaurant.rating}}
+<a [routerLink]="['/restaurantprofile']" routerLinkActive="router-link-active"
+          (click)="displayprofile(restaurant)">Profile</a>
+</div> -->
+
+<div class="card-columns">
+    <div class="card text-white bg-dark mb-3" *ngFor="let restaurant of restaurants">
+        <div class="card-body">
+            <h5 class="card-title">{{restaurant.name}}</h5>
+            <p class="card-text">
+            <a [routerLink]="['/restaurantprofile']" routerLinkActive="router-link-active"
+            (click)="displayprofile(restaurant)">Profile</a>
+            </p>
+        </div>
+    </div>
+</div>
